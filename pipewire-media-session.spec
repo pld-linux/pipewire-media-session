@@ -4,12 +4,12 @@
 
 Summary:	Example session manager for PipeWire
 Name:		pipewire-media-session
-Version:	0.4.0
+Version:	0.4.1
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/%{version}/media-session-%{version}.tar.bz2
-# Source0-md5:	079d951f7bc3383ddb11d2b34d0cdb32
+# Source0-md5:	5f6d9e82330c8102f97b099f5269286f
 URL:		https://pipewire.org/
 BuildRequires:	alsa-lib-devel >= 1.1.7
 BuildRequires:	dbus-devel
