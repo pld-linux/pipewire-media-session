@@ -5,7 +5,7 @@
 Summary:	Example session manager for PipeWire
 Name:		pipewire-media-session
 Version:	0.4.1
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries
 Source0:	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/%{version}/media-session-%{version}.tar.bz2
@@ -22,7 +22,9 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 2.011
 BuildRequires:	systemd-devel
+Requires(post,preun):	systemd-units >= 250.1
 Requires:	pipewire-libs >= 0.3.39
+Requires:	systemd-units >= 250.1
 Provides:	pipewire-session-manager
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
