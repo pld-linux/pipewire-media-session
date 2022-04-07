@@ -3,11 +3,13 @@
 %bcond_without	apidocs		# Doxygen based documentation
 
 Summary:	Example session manager for PipeWire
+Summary(pl.UTF-8):	Przykładowy zarządca sesji dla PipeWire
 Name:		pipewire-media-session
 Version:	0.4.1
 Release:	3
 License:	MIT
 Group:		Libraries
+#Source0Download: https://gitlab.freedesktop.org/pipewire/media-session/-/tags
 Source0:	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/%{version}/media-session-%{version}.tar.bz2
 # Source0-md5:	5f6d9e82330c8102f97b099f5269286f
 URL:		https://pipewire.org/
@@ -22,22 +24,29 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 2.011
 BuildRequires:	systemd-devel
-Requires(post,preun):	systemd-units >= 250.1
+Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	pipewire-libs >= 0.3.39
-Requires:	systemd-units >= 250.1
+Requires:	systemd-units >= 1:250.1
 Provides:	pipewire-session-manager
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 PipeWire Media Session is an example session manager for PipeWire.
 
+%description -l pl.UTF-8
+PipeWire Media Session to przykładowy zarządca sesji dla PipeWire.
+
 %package apidocs
 Summary:	API documentation for PipeWire Media Session
+Summary(pl.UTF-8):	Dokumentacja API PipeWire Media Session
 Group:		Documentation
 BuildArch:	noarch
 
 %description apidocs
 API documentation for PipeWire Media Session.
+
+%description apidocs -l pl.UTF-8
+Dokumentacja API PipeWire Media Session.
 
 %prep
 %setup -q -n media-session-%{version}
