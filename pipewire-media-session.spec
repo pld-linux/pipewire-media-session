@@ -52,15 +52,15 @@ Dokumentacja API PipeWire Media Session.
 %setup -q -n media-session-%{version}
 
 %build
-%meson build \
+%meson \
 	-Ddocs=%{__enabled_disabled apidocs}
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 # packaged as %doc in -apidocs
 %{?with_apidocs:%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/media-session/html}
