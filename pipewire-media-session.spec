@@ -22,7 +22,7 @@ BuildRequires:	ninja
 BuildRequires:	pipewire-devel >= 0.3.39
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
-BuildRequires:	rpmbuild(macros) >= 2.011
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	systemd-devel
 Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	pipewire-libs >= 0.3.39
