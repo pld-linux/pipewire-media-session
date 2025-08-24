@@ -5,13 +5,13 @@
 Summary:	Example session manager for PipeWire
 Summary(pl.UTF-8):	Przykładowy zarządca sesji dla PipeWire
 Name:		pipewire-media-session
-Version:	0.4.1
-Release:	3
+Version:	0.4.3
+Release:	1
 License:	MIT
 Group:		Libraries
 #Source0Download: https://gitlab.freedesktop.org/pipewire/media-session/-/tags
 Source0:	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/%{version}/media-session-%{version}.tar.bz2
-# Source0-md5:	5f6d9e82330c8102f97b099f5269286f
+# Source0-md5:	e08908916da830adf08fd7fd186f12df
 URL:		https://pipewire.org/
 BuildRequires:	alsa-lib-devel >= 1.1.7
 BuildRequires:	dbus-devel
@@ -19,13 +19,13 @@ BuildRequires:	dbus-devel
 BuildRequires:	gettext-tools
 BuildRequires:	meson >= 0.56.0
 BuildRequires:	ninja
-BuildRequires:	pipewire-devel >= 0.3.39
+BuildRequires:	pipewire-devel >= 0.3.44
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	systemd-devel
 Requires(post,preun):	systemd-units >= 1:250.1
-Requires:	pipewire-libs >= 0.3.39
+Requires:	pipewire-libs >= 0.3.44
 Requires:	systemd-units >= 1:250.1
 Provides:	pipewire-session-manager
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -53,7 +53,8 @@ Dokumentacja API PipeWire Media Session.
 
 %build
 %meson \
-	-Ddocs=%{__enabled_disabled apidocs}
+	-Ddocs=%{__enabled_disabled apidocs} \
+	-Dsystemd=enabled
 
 %meson_build
 
